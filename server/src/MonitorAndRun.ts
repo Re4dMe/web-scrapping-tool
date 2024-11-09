@@ -1,0 +1,1 @@
+const WebCollectTaskRunner = require('./TaskRunner/WebCollectTaskRunner')

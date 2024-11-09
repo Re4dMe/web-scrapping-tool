@@ -1,0 +1,23 @@
+body {
+  margin: 10;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: gray;
+}
+
+body,
+html {
+    font-family: 'Segoe UI';  
+}
+
+.dataPanel {
+    display: flex;
+    align-content: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+

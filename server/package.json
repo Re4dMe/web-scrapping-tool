@@ -1,0 +1,43 @@
+{
+  "name": "web-scrapping-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --project ./",
+    "start": "nodemon src/main.ts",
+    "tsc-build": "tsc --build",
+    "tsc-clean": "tsc --build --clean"
+  },
+  "_moduleAliases": {
+    "@DataIngestor": "src/DataIngestor",
+    "@Database": "src/Database",
+    "@Collector": "src/Collector",
+    "@TaskManager": "src/TaskManager",
+    "@TaskRunner": "src/TaskRunner",
+    "@Interfaces": "src/Interfaces",
+    "@Services": "src/Services",
+    "@MessageBroker": "src/MessageBroker",
+    "@Typing": "src/Typing"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.18.2",
+    "module-alias": "^2.2.2",
+    "nodemon": "^3.1.7",
+    "pg": "^8.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io": "^4.6.1",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4"
+  }
+}

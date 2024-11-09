@@ -1,0 +1,60 @@
+.overflowContent {
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+    overflow: auto;
+    height: 90vh;
+}
+
+table {
+    font-family: 'Oswald', sans-serif;
+    border-collapse: separate;
+    width: 50vw;
+    border-spacing: 0;
+    border: 1px solid #6b675d;
+    table-layout: fixed;
+    position: sticky;
+}
+
+th {
+    background-color: #978351;
+    color:#ffffff;
+    width: 24vw;
+    height: 75px;
+    position: sticky;
+    top: 0; /* Don't forget this, required for the stickiness */
+}
+
+td {
+    background-color:#f3f3f3;
+    width: 25vw;
+    height: 50px;
+    text-align: center;
+    border-top: 1px dotted #6b675d;
+    border-left: 1px dotted #6b675d;
+}
+
+tr:nth-of-type(2) td{
+    border-top: none;
+}
+
+tr td:first-child{
+    border-left: none;
+}
+
+th{
+    border-top: 1px dotted #ffffff;
+    border-left: 1px dotted #ffffff;
+}
+
+tr:nth-of-type(1) th {
+    border-top: none;
+}
+
+tr:first-child th:first-child {
+    border-top: none;
+    border-left: none;
+}
+
+tr:last-of-type{
+    border-bottom: 2px solid #6b675d;
+}
