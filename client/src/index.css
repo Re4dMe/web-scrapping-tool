@@ -6,12 +6,13 @@ body {
   align-content: center;
   justify-content: center;
   flex-direction: row;
-  background-color: gray;
+  background-color: #f5f8f6;
 }
 
 body,
 html {
     font-family: 'Segoe UI';  
+    font: 'Segoe UI';  
 }
 
 .dataPanel {
@@ -21,3 +22,8 @@ html {
     flex-wrap: wrap;
 }
 
+.app-container {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}

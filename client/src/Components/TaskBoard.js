@@ -76,13 +76,22 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 */
+const TaskControlTheme = (0, material_1.createTheme)({
+    palette: {
+        primary: {
+            main: '#94b4aa',
+        },
+        secondary: {
+            main: '#6e9389',
+        },
+    }
+});
 const TaskControl = (props) => {
     const [taskInfo, setTaskInfo] = (0, react_1.useState)({ taskID: "", taskName: "", content: "" });
     const addTaskClick = (taskInfo) => {
         props.addTaskFunc(taskInfo)
             .then(() => { });
     };
-    // const classes = useStyles();
-    return ((0, jsx_runtime_1.jsx)("div", { className: 'task-control-container', children: (0, jsx_runtime_1.jsxs)(material_1.Grid, { sx: gridContainer, container: true, spacing: 1, children: [(0, jsx_runtime_1.jsx)(material_1.Grid, { item: true, sx: gridItem, xs: 4, children: (0, jsx_runtime_1.jsx)(material_1.TextField, { id: "TaskNameField", value: taskInfo.taskName, label: "Task Name", variant: "standard", size: "small", onChange: e => setTaskInfo(Object.assign(Object.assign({}, taskInfo), { taskName: e.target.value })) }) }), (0, jsx_runtime_1.jsx)(material_1.Grid, { item: true, sx: gridItem, xs: 4, children: (0, jsx_runtime_1.jsx)(material_1.TextField, { id: "TaskContentField", value: taskInfo.content, label: "Task Content", variant: "standard", size: "small", onChange: e => setTaskInfo(Object.assign(Object.assign({}, taskInfo), { content: e.target.value })) }) }), (0, jsx_runtime_1.jsx)(material_1.Grid, { item: true, sx: gridItem, xs: 4, alignItems: "stretch", style: { "marginTop": 0 }, children: (0, jsx_runtime_1.jsx)(material_1.Button, { variant: "contained", onClick: () => addTaskClick(taskInfo), children: "Add" }) })] }) }));
+    return ((0, jsx_runtime_1.jsx)(material_1.ThemeProvider, { theme: TaskControlTheme, children: (0, jsx_runtime_1.jsx)("div", { className: 'task-control-container', children: (0, jsx_runtime_1.jsxs)(material_1.Grid, { sx: gridContainer, container: true, spacing: 1, children: [(0, jsx_runtime_1.jsx)(material_1.Grid, { item: true, sx: gridItem, xs: 4, children: (0, jsx_runtime_1.jsx)(material_1.TextField, { id: "TaskNameField", value: taskInfo.taskName, label: "Task Name", variant: "standard", size: "small", color: "secondary", onChange: e => setTaskInfo(Object.assign(Object.assign({}, taskInfo), { taskName: e.target.value })) }) }), (0, jsx_runtime_1.jsx)(material_1.Grid, { item: true, sx: gridItem, xs: 4, children: (0, jsx_runtime_1.jsx)(material_1.TextField, { id: "TaskContentField", value: taskInfo.content, label: "Task Content", variant: "standard", size: "small", color: "secondary", onChange: e => setTaskInfo(Object.assign(Object.assign({}, taskInfo), { content: e.target.value })) }) }), (0, jsx_runtime_1.jsx)(material_1.Grid, { item: true, sx: gridItem, xs: 4, alignItems: "stretch", style: { "marginTop": 0 }, children: (0, jsx_runtime_1.jsx)(material_1.Button, { variant: "contained", onClick: () => addTaskClick(taskInfo), color: "primary", children: "Add" }) })] }) }) }));
 };
 exports.TaskControl = TaskControl;

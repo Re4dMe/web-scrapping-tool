@@ -169,25 +169,16 @@ const Test = (props) => {
             console.log("done");
         });
     };
-    {
-        /*const refreshPage = () => {
-        this.setState(
-          {reload: true},
-          () => this.setState({reload: false})
-        )
-        }*/
-    }
     return ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [(0, jsx_runtime_1.jsxs)("div", { className: "dataPanel", children: [(0, jsx_runtime_1.jsxs)("div", { className: 'stringTextSection', children: [(0, jsx_runtime_1.jsx)("span", { children: "a: " }), (0, jsx_runtime_1.jsx)("input", { type: "text", id: 'var', name: "var_string", onChange: handleChange })] }), (0, jsx_runtime_1.jsxs)("div", { className: 'stringTextSection', children: [(0, jsx_runtime_1.jsx)("span", { children: "a: " }), (0, jsx_runtime_1.jsx)("input", { type: "text", id: 'chinese', name: "chinese_string", onChange: handleChange })] }), (0, jsx_runtime_1.jsxs)("div", { className: 'stringTextSection', children: [(0, jsx_runtime_1.jsx)("span", { children: "a: " }), (0, jsx_runtime_1.jsx)("input", { type: "text", id: 'english', name: "english_string", onChange: handleChange })] })] }), (0, jsx_runtime_1.jsx)("div", { children: stringState.var_string }), (0, jsx_runtime_1.jsx)("button", { onClick: handleCreateClick, children: "create" }), (0, jsx_runtime_1.jsx)("button", { onClick: handleGetStringPairClick, children: "get" }), (0, jsx_runtime_1.jsx)("div", { className: "dataPanel", children: (0, jsx_runtime_1.jsxs)("div", { className: 'stringTextSection', children: [(0, jsx_runtime_1.jsx)("span", { children: "a: " }), (0, jsx_runtime_1.jsx)("input", { type: "text", id: 'id', name: "id", onChange: handleChange })] }) }), (0, jsx_runtime_1.jsx)("button", { onClick: handleDeleteStringPairClick, children: "delete" }), (0, jsx_runtime_1.jsx)(TextList, { words: stringState.db_data }), (0, jsx_runtime_1.jsx)("button", { onClick: handleCollectPage, children: "collect" })] }));
 };
 function ChangeTitle() {
-    console.log("Change title.");
     (0, react_1.useEffect)(() => {
         document.title = 'Title';
     }, []);
     return (0, jsx_runtime_1.jsx)("link", { rel: "icon", href: "" });
 }
 //<App />
-root.render((0, jsx_runtime_1.jsx)(react_1.default.StrictMode, { children: (0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [(0, jsx_runtime_1.jsx)(ChangeTitle, {}), (0, jsx_runtime_1.jsxs)("div", { style: { display: "flex", flexDirection: "row" }, children: [(0, jsx_runtime_1.jsx)(index_1.DatabaseTable, {}), (0, jsx_runtime_1.jsxs)("div", { className: 'task-section', children: [(0, jsx_runtime_1.jsx)(TaskBoard_1.TaskControl, { addTaskFunc: addTask }), (0, jsx_runtime_1.jsx)(TaskBoard_1.TaskBoard, {})] })] })] }) }));
+root.render((0, jsx_runtime_1.jsx)(react_1.default.StrictMode, { children: (0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [(0, jsx_runtime_1.jsx)(ChangeTitle, {}), (0, jsx_runtime_1.jsxs)("div", { className: "app-container", children: [(0, jsx_runtime_1.jsx)(index_1.DatabaseTable, {}), (0, jsx_runtime_1.jsxs)("div", { className: 'task-section', children: [(0, jsx_runtime_1.jsx)(TaskBoard_1.TaskControl, { addTaskFunc: addTask }), (0, jsx_runtime_1.jsx)(TaskBoard_1.TaskBoard, {})] })] })] }) }));
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

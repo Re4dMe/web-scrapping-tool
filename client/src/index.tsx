@@ -46,8 +46,6 @@ const collectPage = (collect_url: any): Promise<any> =>{
         return r.json()})
 }
 
- 
-
 const addTask = async (task: any): Promise<any> => {
     try {
         const url = "http://localhost:5000/WebCollectTaskManagementService/addTask"
@@ -166,16 +164,6 @@ const Test = (props: any) => {
                 console.log("done")
             })
     }
-
-
-    {
-        /*const refreshPage = () => {
-        this.setState(
-          {reload: true},
-          () => this.setState({reload: false})
-        )
-        }*/
-    }
       
     return (
             <>
@@ -210,7 +198,6 @@ const Test = (props: any) => {
 }
 
 function ChangeTitle() {
-    console.log("Change title.")
     useEffect(() => {
       document.title = 'Title';
     }, []);
@@ -223,8 +210,7 @@ root.render(
   <React.StrictMode>
     <>
         <ChangeTitle/>
-        {/*<Test/>*/}
-        <div style={{display:"flex", flexDirection:"row"}}>
+        <div className="app-container">
             <DatabaseTable />
             <div className='task-section'>
                 <TaskControl addTaskFunc={addTask}/>

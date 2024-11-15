@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TaskInfo, TaskState } from '../Typing/TaskType';
-import { Grid, Button, TextField } from '@mui/material';
+import { Grid, Button, TextField, ThemeProvider, createTheme } from '@mui/material';
 import { fetchTaskStatus } from './TaskBoardRequest';
 import '../Style/TaskBox.css';
 import '../Style/TaskControl.css';
@@ -58,11 +58,8 @@ export const TaskBoard = (props: any) => {
     */
 
     useEffect(() => {
-        let i = 0;
         console.log("create board")
         let run = async () => {
-            console.log(`count ${i}`)
-            i++;
             let data = await fetchTaskStatus();
             await setTasks(data);
             setTimeout(run, 2000);
@@ -121,6 +118,17 @@ const useStyles = makeStyles((theme) => ({
   }));
 */
 
+const TaskControlTheme = createTheme({
+    palette: {
+        primary: {
+            main: '#94b4aa',
+        },     
+        secondary: {
+            main: '#6e9389',
+        },      
+    }
+});
+
 export const TaskControl = (props: TaskControlProps) => {
 
     const [taskInfo, setTaskInfo] = useState<TaskInfo>({taskID: "", taskName: "", content: ""});
@@ -128,41 +136,45 @@ export const TaskControl = (props: TaskControlProps) => {
         props.addTaskFunc(taskInfo)
             .then(() => {})
     }   
-    // const classes = useStyles();
 
     return (
-        <div className='task-control-container'>
-            <Grid sx={gridContainer} container={true} spacing={1}>
-                <Grid item sx={gridItem} xs={4}>
-                    <TextField 
-                        id="TaskNameField" 
-                        value={taskInfo.taskName}
-                        label="Task Name" 
-                        variant="standard" 
-                        size="small"
-                        onChange={e => setTaskInfo({...taskInfo, taskName: e.target.value})}
-                    /> 
+        <ThemeProvider theme={TaskControlTheme}>
+            <div className='task-control-container'>
+                <Grid sx={gridContainer} container={true} spacing={1}>
+                    <Grid item sx={gridItem} xs={4}>
+                        <TextField 
+                            id="TaskNameField"
+                            value={taskInfo.taskName}
+                            label="Task Name"
+                            variant="standard" 
+                            size="small"
+                            color="secondary"
+                            onChange={e => setTaskInfo({...taskInfo, taskName: e.target.value})}
+                        /> 
+                    </Grid>
+                    <Grid item sx={gridItem} xs={4}>
+                        <TextField 
+                            id="TaskContentField" 
+                            value={taskInfo.content}
+                            label="Task Content"
+                            variant="standard" 
+                            size="small"
+                            color="secondary"
+                            onChange={e => setTaskInfo({...taskInfo, content: e.target.value})}
+                        />  
+                    </Grid>
+                    <Grid item sx={gridItem} xs={4} alignItems="stretch" style={{"marginTop": 0}} >
+                        <Button 
+                            variant="contained"
+                            onClick={() => addTaskClick(taskInfo)}
+                            color="primary"
+                        >
+                            Add
+                        </Button>
+                    </Grid>
                 </Grid>
-                <Grid item sx={gridItem} xs={4}>
-                    <TextField 
-                        id="TaskContentField" 
-                        value={taskInfo.content}
-                        label="Task Content"
-                        variant="standard" 
-                        size="small"
-                        onChange={e => setTaskInfo({...taskInfo, content: e.target.value})}
-                    />  
-                </Grid>
-                <Grid item sx={gridItem} xs={4} alignItems="stretch" style={{"marginTop": 0}} >
-                    <Button 
-                        variant="contained"
-                        onClick={() => addTaskClick(taskInfo)}
-                    >
-                        Add
-                    </Button>
-                </Grid>
-            </Grid>
-        </div>
+            </div>
+        </ThemeProvider>
     );
 }
  

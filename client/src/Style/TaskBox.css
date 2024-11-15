@@ -1,25 +1,21 @@
 .task-box-container {
     width: 400px;
-    height: 150px;
- 
-    background-color: white;
+    height: 200px;
+    background-color: #f5f8f6;
     margin: 10px;
     display: flex;
     flex-direction: column;
-    overflow:scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .task-box {
     margin: 10px;
-    margin-top: 20px;
     width: 170px;
-    height: 40px;
-    background-color: darkgray;
-    /* border-radius: 20%; */
-    border-top-left-radius: 10%;
-    /* border-bottom-right-radius: 10%; */
-    border-top-right-radius: 0%;
-    border-left: 4px solid yellow;
+    min-height: 100px;
+    background-color: #bdd2ca;
+    border-radius: 10px;
+    border-left: 4px solid #426159;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +41,6 @@
     background-color: rgb(194, 184, 184);
     width: 10%;
     height: 100%;
-    
 }
 
 .task-box .button-panels .delete-button {
@@ -65,7 +60,7 @@
     border-top-left-radius: 10%;
     border-bottom-right-radius: 10%;
     border-top-right-radius: 0%;
-    border-left: 4px solid yellow;
+    border-left: 4px solid #bdd2ca;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -90,7 +85,6 @@
 .a_demo_three {
     width: 20%;
 	background-color:#3bb3e0;
-	font-family: 'Open Sans', sans-serif;
 	font-size:12px;
 	text-decoration:none;
 	color:#fff;
